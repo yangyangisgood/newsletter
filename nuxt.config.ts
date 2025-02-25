@@ -11,4 +11,11 @@ export default defineNuxtConfig({
   routeRules: {
     "/admin/**": { appMiddleware: "auth" },
   },
+  nitro: {
+    preset: 'firebase',
+    firebase: {
+      gen: 2,
+      serverFunctionName: 'server'
+    }
+  },
 })
