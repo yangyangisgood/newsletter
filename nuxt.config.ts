@@ -11,4 +11,12 @@ export default defineNuxtConfig({
   routeRules: {
     "/admin/**": { appMiddleware: "auth" },
   },
+  app: {
+    baseURL: process.env.NODE_ENV === "production" ? "/newsletter/" : "/",
+  },
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
 })

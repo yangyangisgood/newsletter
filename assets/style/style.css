@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "SweiHalfMoon";
+  src: url("~/assets/font/SweiHalfMoonCJKtc-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SweiHalfMoon-Bold';
+  src: url('~/assets/font/SweiHalfMoonCJKtc-Bold.ttf') format("truetype");
+  unicode-range: U+4E00-9FFF
+}
+
+body {
+    font-family: "SweiHalfMoon";
+    background-color: #fff;
+    max-width: 820px;
+    margin: auto;
+  }
+  
