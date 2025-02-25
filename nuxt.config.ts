@@ -18,4 +18,7 @@ export default defineNuxtConfig({
       serverFunctionName: 'server'
     }
   },
+  app: {
+    baseURL: process.env.NODE_ENV === "production" ? "/newsletter/" : "/",
+  },
 })
