@@ -3,9 +3,9 @@
     <el-row align="middle" justify="space-between" class="nav-bar">
       <el-image class="nav-img" :src="'/image/avatar.png'" fit="contain" />
       <h1 class="nav-title">title</h1>
-      <el-button type="primary" @click="navigateTo('/subscribe')">
+      <button class="subscribe-btn" @click="navigateTo('/subscribe')">
         Subscribe
-      </el-button>
+      </button>
     </el-row>
 
     <el-skeleton :loading="loading" animated>
@@ -13,14 +13,13 @@
         v-if="articles.length"
         accordion
         border-color="#eee"
-        :header-height="52"
         header-text-color="#888"
         content-bg-color="#f9f9f9"
       >
         <el-collapse-item v-for="(article, index) in articles" :key="index">
           <template #title>
             <div class="title-container">
-              <h2 class="title">{{ article.title }}</h2>
+              <p class="title">{{ article.title }}</p>
               <p class="date">{{ article.date }}</p>
             </div>
           </template>
@@ -70,14 +69,38 @@ onMounted(async () => {
   height: 50px;
   border-radius: 50%;
 }
+
+.subscribe-btn {
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  border-bottom-color: #000;
+  border-top-color: #777;
+  border-right-color: #000;
+  border-left-color: #777;
+}
+
+.title {
+  font-family: SweiHalfMoon-Bold;
+  height: 20px;
+  margin: 0px;
+}
+
+.date {
+  font-size: 8px;
+  height: 12px;
+  margin: 0px;
+}
+
 .title-container {
   font-family: SweiHalfMoon;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .el-row {
-  height: 9%;
+  height: 13%;
 }
 
 :deep .el-card__body {
@@ -87,7 +110,7 @@ onMounted(async () => {
 }
 
 :deep .el-collapse {
-  height: 91%;
+  height: 87%;
   width: 100%;
   background-color: #f9f9f9;
 }

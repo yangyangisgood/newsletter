@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ['@element-plus/nuxt'],
   elementPlus: {
     importStyle: 'css',
-    themes: ['dark'], // 支援深色模式
+    themes: ['dark'],
   },
   css: ["~/assets/style/style.css"],
   routeRules: {
